@@ -6,8 +6,8 @@ set number
 
 " set color scheme
 syntax enable
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 " set the font to be used in VIM
 " set guifont=Menlo:h18
