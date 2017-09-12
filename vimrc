@@ -1,12 +1,16 @@
 " Criscom's runtime configuration settings for VIM
 " created: 20170812
 
+" set runtimepath^=~/.vim runtimepath+=~/.vim/after
+" let &packpath = &runtimepath
+" source ~/.vimrc
+
 " set line numbers - 20170812
 set number
 
 " set color scheme
 syntax enable
-" set background=dark
+set background=dark
 " colorscheme solarized
 
 " set the font to be used in VIM
@@ -17,4 +21,4 @@ syntax enable
 
 " add a colored column at 90 to avoid going too far to the right
 
-set colorcolumn=90
+" set colorcolumn=90
