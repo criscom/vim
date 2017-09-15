@@ -7,7 +7,8 @@
 
 " From http://nerditya.com/code/guide-to-neovim/
 " Map the leader key to SPACE
-let mapleader="\<SPACE>"
+" let mapleader="\<SPACE>"
+let mapleader = " "
 
 set showcmd           " Show (partial) command in status line.
 set showmatch         " Show matching brackets.
@@ -15,20 +16,34 @@ set showmode          " Show current mode.
 set ruler             " Show the line and column numbers of the cursor.
 
 set number            " Show the line numbers on the left side.
+set numberwidth=5
 
+set backspace=2       " Backspace deletes like most programs in insert mode.
 set formatoptions+=o  " Continue comment marker in new lines.
 set textwidth=0       " Hard-wrap long lines as you type them.
 set expandtab         " Insert spaces when TAB is pressed.
 set tabstop=2         " Render TABs using this many spaces.
 set shiftwidth=2      " Indentation amount for < and > commands.
+set shiftround
+set expandtab
+set history=50
+set ruler             " Show the cursor postion all the time
+set incsearch         " Do incremental searching
+set laststatus=2      " Always display the status line
+
+set autowrite         " Automatically :write before running commands
 
 set noerrorbells      " No beeps.
 set modeline          " Enable modeline.
 
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=1
+
 " set color scheme
 syntax enable
 set background=dark
-" colorscheme solarized
+colorscheme solarized
 
 " set the font to be used in VIM
 " set guifont=Menlo:h18
@@ -50,3 +65,10 @@ if &listchars ==# 'eol:$'
   " Also highlight all tabs and trailing whitespace characters.
   highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
   match ExtraWhitespace /\s\+$\|\t/
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
+
