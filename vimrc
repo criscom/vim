@@ -23,6 +23,7 @@ set formatoptions+=o  " Continue comment marker in new lines.
 set textwidth=0       " Hard-wrap long lines as you type them.
 set expandtab         " Insert spaces when TAB is pressed.
 set tabstop=2         " Render TABs using this many spaces.
+" set autoindent        " always set autoindenting
 set shiftwidth=2      " Indentation amount for < and > commands.
 set shiftround
 set expandtab
